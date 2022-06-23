@@ -14,9 +14,9 @@ import SidebarMenuItem from "./SidebarMenuItem";
 
 const Sidebar = () => {
   return (
-    <div>
+    <div className="hidden sm:flex flex-col p-2 xl:items-start fixed h-full">
       {/* Twitter Logo */}
-      <div className="">
+      <div className="hoverEffect p-0 hover:bg-blue-100 xl:px-1">
         <Image
           width={50}
           height={50}
@@ -25,8 +25,8 @@ const Sidebar = () => {
       </div>
 
       {/* Menu */}
-      <div className="">
-        <SidebarMenuItem text="Home" Icon={HomeIcon} />
+      <div className="mt-4 mb-2.5 xl:items-start">
+        <SidebarMenuItem text="Home" Icon={HomeIcon} active />
         <SidebarMenuItem text="Explore" Icon={HashtagIcon} />
         <SidebarMenuItem text="Notifications" Icon={BellIcon} />
         <SidebarMenuItem text="Messages" Icon={InboxIcon} />
@@ -38,21 +38,24 @@ const Sidebar = () => {
 
       {/* Button */}
 
-      <button>Tweet</button>
+      <button className="bg-blue-400 text-white rounded-full w-56 h-12 font-bold shadow-md hover:brightness-95 text-lg hidden xl:inline">
+        Tweet
+      </button>
 
       {/* Mini Profile */}
-      <div className="">
+      <div className="hoverEffect text-gray-700 flex items-center justify-center xl:justify-start mt-auto">
         <img
           src="https://mediate.co.id/wp-content/uploads/2021/01/user-icon-600x600.jpg"
           height={50}
           width={50}
           alt="user-img"
+          className="h-10 w-10 rounded-full xl:mr-2"
         />
-        <div className="">
-          <h4>Muhammad Iqbal Muhtadin</h4>
-          <p>@tes</p>
+        <div className="leading-5 hidden xl:inline">
+          <h4 className="font-bold">M Iqbal Muhtadin</h4>
+          <p className="text-gray-500">@tes</p>
         </div>
-        <DotsHorizontalIcon className="h-5" />
+        <DotsHorizontalIcon className="h-5 xl:ml-8 hidden xl:inline" />
       </div>
     </div>
   );
